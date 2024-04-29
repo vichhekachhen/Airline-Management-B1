@@ -1,7 +1,6 @@
 import { Address } from "../Adress/Adress";
 import { Gate } from "./Gate";
 
-
 export class Airport {
   constructor(private name: string, private address:Address, private gate:Gate) {
     this.name = name;
