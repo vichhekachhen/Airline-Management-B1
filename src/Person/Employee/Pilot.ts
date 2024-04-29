@@ -3,22 +3,21 @@ import { DateTime } from "../../Date/DateTime";
 import { Employee } from "./Employee";
 import { Flight } from "../../Flight/Flight";
 
-
 export class Pilot extends Employee {
     private flights: Flight[] = [];
     private dates: DateTime[] = [];
     constructor(firstName: string, lastName: string, gender: Gender, age: number, Nationality: string, salary: number) {
         super(firstName, lastName, gender, age, Nationality, salary)
-   
+
     }
-      
-        addFlight(flight: Flight) {
-            this.flights.push(flight)
-        }
-    
-        addDateFlight(date: DateTime) {
-            this.dates.push(date);
-        }
+
+    addFlight(flight: Flight) {
+        this.flights.push(flight)
+    }
+
+    addDateFlight(date: DateTime) {
+        this.dates.push(date);
+    }
 
 
 
