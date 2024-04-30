@@ -8,7 +8,6 @@ export class Employee extends Person {
         this.salary = salary
 
     }
-
     public getSalary(): number {
         return this.salary
     }
