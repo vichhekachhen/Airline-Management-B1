@@ -8,22 +8,25 @@ export class Booking {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.bookingId = bookingId;
     }
-
-    getReferenceNumberInBooking() {
+    public getBookingReferenceNumber():string{
         return this.bookingReferenceNumber;
     }
 
+    public getReferenceNumberInBooking() {
+        return this.bookingReferenceNumber;
+    }
+    
 
-    isPassengerRegferenceNumberEqual(newbookingReferenceNumber: string): boolean {
+    public isPassengerRegferenceNumberEqual(newbookingReferenceNumber: string): boolean {
         return this.bookingReferenceNumber === newbookingReferenceNumber
     }
 
-    getPassengers():Passenger[] {
+    public getPassengers():Passenger[] {
         return this.passengers;
     }
 
 
-    getBookingTrip(): number {
+    public getBookingTrip(): number {
         let numberOfBookingTrip: number = 0;
         this.bookingTrips.forEach(trip => {
             if (trip) {
@@ -34,13 +37,13 @@ export class Booking {
 
     }
 
-    getAllBookingTrips() {
+    public getAllBookingTrips() {
         return this.bookingTrips;
     }
-    addBookingTrips(trip:BookingTrip){
+    public addBookingTrips(trip:BookingTrip){
         this.bookingTrips.push(trip)
     }
-    addPassenger(passenger:Passenger){
+    public addPassenger(passenger:Passenger){
         this.passengers.push(passenger)
     }
 }
