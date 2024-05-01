@@ -12,15 +12,13 @@ export class BookingTrip {
     private bookingFlight: BookingFlight[] = [];
     private returnTicket: ReturnTicket[] = [];
 
-    getBookingFlight(){
+    public getBookingFlight(){
         return this.bookingFlight
     }
-
-    setReturnTicket(returnTicket: ReturnTicket) {
+    public setReturnTicket(returnTicket: ReturnTicket) {
         this.returnTicket?.push(returnTicket);
     }
-
-    getAllReturnTicket(): number {
+    public getAllReturnTicket(): number {
         let numberOfReturnTicket: number = 0;
         this.returnTicket.forEach((returnTiket) => {
             if (returnTiket) {
@@ -29,11 +27,10 @@ export class BookingTrip {
         })
         return numberOfReturnTicket;
     }
-
-    addPassengerBag(bag: Baggage) {
+    public addPassengerBag(bag: Baggage) {
         this.Baggages.push(bag);
     }
-    addBookingFlight(bookingFlight:BookingFlight) {
+    public addBookingFlight(bookingFlight:BookingFlight) {
         this.bookingFlight.push(bookingFlight)
     }
 }

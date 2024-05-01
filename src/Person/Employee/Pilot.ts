@@ -11,11 +11,11 @@ export class Pilot extends Employee {
 
     }
 
-    addFlight(flight: Flight) {
+    public addFlight(flight: Flight) {
         this.Flights.push(flight)
     }
 
-    addDateFlight(date: DateTime) {
+    public addDateFlight(date: DateTime) {
         this.Dates.push(date);
     }
 

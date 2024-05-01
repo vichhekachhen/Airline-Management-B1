@@ -7,11 +7,11 @@ export class Address {
       this.country = country;
     }
     
-    getCity(): string {
+    public getCity(): string {
       return this.city;
     }
   
-    getCountry(): string {
+    public getCountry(): string {
       return this.country;
     }
   }

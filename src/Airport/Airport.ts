@@ -8,7 +8,7 @@ export class Airport {
     this.gate = gate;
   }
 
-  getName(): string {
+  public getName(): string {
     return this.name;
   }
 
