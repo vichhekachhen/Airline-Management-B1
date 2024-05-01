@@ -8,17 +8,17 @@ export class Booking {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.bookingId = bookingId;
     }
+
+    public isPassengerRegferenceNumberEqual(newbookingReferenceNumber: string): boolean {
+        return this.bookingReferenceNumber === newbookingReferenceNumber
+    }
+    
     public getBookingReferenceNumber():string{
         return this.bookingReferenceNumber;
     }
 
     public getReferenceNumberInBooking() {
         return this.bookingReferenceNumber;
-    }
-    
-
-    public isPassengerRegferenceNumberEqual(newbookingReferenceNumber: string): boolean {
-        return this.bookingReferenceNumber === newbookingReferenceNumber
     }
 
     public getPassengers():Passenger[] {
@@ -28,6 +28,7 @@ export class Booking {
     public getAllBookingTrips() {
         return this.bookingTrips;
     }
+
     public addBookingTrips(trip:BookingTrip){
         this.bookingTrips.push(trip)
     }

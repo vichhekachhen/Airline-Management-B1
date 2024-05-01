@@ -57,7 +57,7 @@ export class Passenger extends Person {
     public getGateForPassenger(): Gate | undefined {
         let showgate: Gate | undefined = undefined
         this.bookingFlights.forEach(flight => {
-            flight.getAFlight().getGates().forEach(gate => {
+            flight.getFlight().getGates().forEach(gate => {
                 if (flight.getGate() === gate) {
                     showgate = gate
                 }
