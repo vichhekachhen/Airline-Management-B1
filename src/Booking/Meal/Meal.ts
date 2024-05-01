@@ -1,6 +1,6 @@
 export enum Meal {
-    VEGENTARIAN = 'VEGENTARIAN',
-    VEGAN = 'VEGAM',
-    HALAL = 'HALAL',
-    KOSHER = 'KOSHER'
+    VEGENTARIAN = 'Vegentarian',
+    VEGAN = 'Vegan',
+    HALAL = 'Halal',
+    KOSHER = 'Kosher'
 }

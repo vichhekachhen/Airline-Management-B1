@@ -86,7 +86,7 @@ Airline1.addBooking(bookingTicket1)
 passenger1.setBooking(bookingTicket1);
 let passengerBooking = Airline1.getInfoOfPassengerByBookingReferenceNumber("BB1");
 
-console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
+// console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
 
 
 // Q2. As an airline manager, I want to know for a given flight, how many passengers were booking return tickets.
@@ -123,7 +123,7 @@ chef1.getMeals();
 // Q5 As an airline manager, I want to find out how much salary I pay all my employees
 Airline1.addEmployee(emyployee1)
 
-// console.log("Q5/ The money that airline manager need to pay for all employees: $",Airline1.getAllSalary());
+// console.log("Q5/ The money that airline manager need to pay for all employees:",Airline1.getAllSalary());
 
 
 // Q6 As a passenger, I want to know which gate my plane is waiting at.
