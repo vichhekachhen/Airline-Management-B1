@@ -44,7 +44,7 @@ let emyployee1 = new Employee( "Thearit", "Houy",  Gender.MALE, 27,"Khmer", 5000
 let emyployee2 = new Employee( "Reak", "Vy",  Gender.MALE, 24,"Khmer", 5000);
 // create chef
 let chef1 = new Chef('Davit', 'Veoun',  Gender.MALE,27,'Khmer',6000 )
-let chef2 = new Chef('Lina', 'Dim',  Gender.FEMALE,30,'Khmer',6000 )
+let chef2 = new Chef('Sanok', 'Dim',  Gender.FEMALE,30,'Khmer',6000 )
 // create passenger
 let passenger1 = new Passenger('Vichheka', 'Chhen', Gender.FEMALE, 20, Meal.HALAL);
 let passenger2 = new Passenger('Lisa', 'Ly',  Gender.FEMALE,21,'Khmer', Meal.KOSHER )
