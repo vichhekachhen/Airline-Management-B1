@@ -39,10 +39,15 @@ export class Airline {
         });
         return allBookings;
     }
-    public getInfoOfPassengerByBookingReferenceNumber(bookingReferenceNumber: string): Booking[] | undefined {
-        const result: Booking[] = this.bookings.filter(booking => booking.getBookingReferenceNumber() === bookingReferenceNumber);
-        return result;
-    }
+    
+    public getInfoOfPassengerByBookingReferenceNumber(bookingReferenceNumber: string): Booking | undefined {
+        for (const booking of this.bookings) {
+          if (booking.getBookingReferenceNumber() === bookingReferenceNumber) {
+            return booking;
+          }
+        }
+        return undefined;
+      }
 
     public getPassengerBookingTicketReturn(): number {
         let passengersReturnTicket: number = 0;
