@@ -14,9 +14,11 @@ export class Route {
     public getAirport():Airport{
         return this.airport;
     }
+
     public getDeparture(): string {
         return this.departure;
     }
+    
     public getArrival(): string {
         return this.arrival;
     }

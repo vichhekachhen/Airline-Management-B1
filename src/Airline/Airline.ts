@@ -32,6 +32,7 @@ export class Airline {
     public addBooking(booking: Booking) {
         this.bookings.push(booking)
     }
+    
     public getAllBookings(): number {
         let allBookings = 0;
         this.bookings.forEach(booking => {
