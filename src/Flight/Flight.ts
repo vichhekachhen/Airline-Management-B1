@@ -18,13 +18,21 @@ export class Flight {
         this.flightNumber = flightNumber;
     }
 
+    public addPilot(pilot:Pilot):void{
+        this.pilot = pilot;
+    }
+    public addRoute(route:Route):void{
+        this.route = route;
+      }
+      public getRoute():Route{
+        return this.route;
+      }
     public getMeals(): Meal[] {
         return this.meals;
     }
     public getGates(): Gate[] {
         return this.gates;
     }
-
     public addGate(gate: Gate) {
         this.gates.push(gate);
     }

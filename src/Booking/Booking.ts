@@ -25,6 +25,15 @@ export class Booking {
         return this.passengers;
     }
 
+    public getAllBookingTrips() {
+        return this.bookingTrips;
+    }
+    public addBookingTrips(trip:BookingTrip){
+        this.bookingTrips.push(trip)
+    }
+    public addPassenger(passenger:Passenger){
+        this.passengers.push(passenger)
+    }
 
     public getBookingTrip(): number {
         let numberOfBookingTrip: number = 0;
@@ -35,15 +44,5 @@ export class Booking {
         })
         return numberOfBookingTrip;
 
-    }
-
-    public getAllBookingTrips() {
-        return this.bookingTrips;
-    }
-    public addBookingTrips(trip:BookingTrip){
-        this.bookingTrips.push(trip)
-    }
-    public addPassenger(passenger:Passenger){
-        this.passengers.push(passenger)
     }
 }

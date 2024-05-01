@@ -1,12 +1,18 @@
-import { Seat } from "./Seat";
+import { Baggage } from "../Person/Material/Baggage"
+import { Seat } from "./Seat"
 
-export class Plane {
+export class Airplane {
     private seats:Seat[] = [];
+    private baggages:Baggage[] = [];
     constructor(private airplane: string) {
         this.airplane = airplane;
     }
 
-    public addSeat(...seat:Seat[]):void{
+    public addSeat(...seat:Seat[]):void {
         this.seats.push(...seat);
+    }
+
+    public addBaggage(...baggage:Baggage[]):void {
+        this.baggages.push(...baggage);
     }
 }
