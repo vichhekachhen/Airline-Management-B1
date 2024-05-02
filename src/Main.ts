@@ -48,8 +48,8 @@ let Copilot2 = new CoPilot('Veasna', 'Choun',  Gender.FEMALE,35,'Khmer',33333 );
 let emyployee1 = new Employee("Thearit", "Houy",  Gender.MALE, 27,"Khmer", 5000);
 let emyployee2 = new Employee("Reak", "Vy",  Gender.MALE, 24,"Khmer", 5000);
 // create chef
-let chef1 = new Chef('Kaa', 'Annie',  Gender.MALE,27,'Khmer',6000 );
-let chef2 = new Chef('Lunaa', 'Vin',  Gender.FEMALE,30,'Khmer',6000 );
+let chef1 = new Chef('Kaa', 'Annie',  Gender.FEMALE,27,'Khmer',6000 );
+let chef2 = new Chef('Lunaa', 'Kaa',  Gender.FEMALE,25,'Korea',6000 );
 // create passenger
 let passenger1 = new Passenger('Vichheka', 'Chhen', Gender.FEMALE, 20,'Khmer');
 let passenger2 = new Passenger('Lisa', 'Ly',  Gender.FEMALE,21,'Thailand' );
@@ -165,6 +165,7 @@ flight1.addMealFromBookingFlight();
 flight1.addBookingFlight(bookingFlight1);
 flight1.addGate(gate1);
 flight1.addPilot(pilot1);
+flight1.addChef(chef2);
 flight1.addRoute(route1);
 
 // console.log(flight1);

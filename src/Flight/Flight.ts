@@ -21,6 +21,9 @@ export class Flight {
     public addPilot(pilot:Pilot):void{
         this.pilot = pilot;
     }
+    public addChef(chef:Chef):void{
+        this.chef = chef;
+    }
     public addRoute(route:Route):void{
         this.route = route;
       }
