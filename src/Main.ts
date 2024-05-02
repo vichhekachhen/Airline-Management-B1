@@ -17,6 +17,8 @@ import { Seat } from "./Airplane/Seat";
 import { Airplane } from "./Airplane/Airplane";
 import { Route } from "./Airport/Route";
 import { Airport } from "./Airport/Airport";
+import { Attendant } from "./Person/Employee/Attendant";
+import { CoPilot } from "./Person/Employee/Co-Pilot";
 
 // create Adress
 let PhnomPenh = new Address("Phnom Penh","Cambodia");
@@ -37,18 +39,27 @@ let Airport2 = new Airport("Phnom Penh",PhnomPenh,gate2);
 let route1 = new Route("Phnom Penh,Cambodia","Seim Reap,Cambodia",Airport1);
 let route2 = new Route("Phnom Penh,Cambodia","Thailand",Airport2);
 // create pilots
-let pilot1 = new Pilot('Rith', 'Thea',  Gender.MALE,34,'Khmer',33333 )
-let pilot2 = new Pilot('Davit', 'Ra',  Gender.FEMALE,35,'Khmer',33333 )
+let pilot1 = new Pilot('Bravit', 'Na',  Gender.MALE,34,'Khmer',33333 );
+let pilot2 = new Pilot('Davit', 'Ra',  Gender.FEMALE,35,'Khmer',33333 );
+// create Co-pilots
+let Copilot1 = new CoPilot('Tiv', 'Ngut',  Gender.MALE,34,'Khmer',33333 );
+let Copilot2 = new CoPilot('Veasna', 'Choun',  Gender.FEMALE,35,'Khmer',33333 );
 //create employees
-let emyployee1 = new Employee( "Thearit", "Houy",  Gender.MALE, 27,"Khmer", 5000);
-let emyployee2 = new Employee( "Reak", "Vy",  Gender.MALE, 24,"Khmer", 5000);
+let emyployee1 = new Employee("Thearit", "Houy",  Gender.MALE, 27,"Khmer", 5000);
+let emyployee2 = new Employee("Reak", "Vy",  Gender.MALE, 24,"Khmer", 5000);
 // create chef
-let chef1 = new Chef('Davit', 'Veoun',  Gender.MALE,27,'Khmer',6000 )
-let chef2 = new Chef('Sanok', 'Dim',  Gender.FEMALE,30,'Khmer',6000 )
+let chef1 = new Chef('Kaa', 'Annie',  Gender.MALE,27,'Khmer',6000 );
+let chef2 = new Chef('Lunaa', 'Vin',  Gender.FEMALE,30,'Khmer',6000 );
 // create passenger
 let passenger1 = new Passenger('Vichheka', 'Chhen', Gender.FEMALE, 20,'Khmer');
-let passenger2 = new Passenger('Lisa', 'Ly',  Gender.FEMALE,21,'Khmer' )
-let passenger3 = new Passenger('Davit', 'Cheoun',  Gender.MALE,21,'Khmer') 
+let passenger2 = new Passenger('Lisa', 'Ly',  Gender.FEMALE,21,'Thailand' );
+let passenger3 = new Passenger('Davit', 'Cheoun',  Gender.MALE,23,'France');
+let passenger4 = new Passenger('Thearith', 'Houy',  Gender.MALE,22,'Khmer');
+// create passenger
+let attendant1 = new Attendant("Sanok", "Nang",  Gender.MALE, 27,"Khmer", 5000);
+let attendant2 = new Attendant("Kadit", "Sit",  Gender.FEMALE, 26,"China", 5000);
+let attendant3 = new Attendant("Bour", "Men",  Gender.MALE, 28,"France", 5000);
+let attendant4 = new Attendant("Roth", "Rith",  Gender.FEMALE, 29,"Vietnam", 5000);
 // create bookingTicket
 let bookingTicket1 = new Booking("BB1","B12");
 let bookingTicket2 = new Booking("BB2","B13");
@@ -60,9 +71,9 @@ let trip1 = new BookingTrip();
 let trip2 = new BookingTrip();
 // create flight 
 let flight = new Flight('AD1');
-let flight1 = new Flight('A1')
-let flight2 = new Flight('A2')
-let flight3 = new Flight('A3')
+let flight1 = new Flight('A1');
+let flight2 = new Flight('A2');
+let flight3 = new Flight('A3');
 // create date
 let date1 = new DateTime('23/04/2024','11:00 AM');
 let date2 = new DateTime('23/04/2024','11:00 PM');
@@ -82,11 +93,11 @@ let seat4 = new Seat("B0010");
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking Reference Number (flights, bags, customer information…)
 
 bookingTicket1.addPassenger(passenger1);
-Airline1.addBooking(bookingTicket1)
+Airline1.addBooking(bookingTicket1);
 passenger1.setBooking(bookingTicket1);
 let passengerBooking = Airline1.getInfoOfPassengerByBookingReferenceNumber("BB1");
 
-console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
+// console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
 
 
 // Q2. As an airline manager, I want to know for a given flight, how many passengers were booking return tickets.
@@ -137,9 +148,13 @@ passenger1.getGateForPassenger();
 
 //============================//Extra User Story//============================
 
-// Q7 As a airplane controller, I want to know the seat and weight of each bags in airplane
-AirplanePP.addSeat(seat1,seat2,seat3,seat4);
-AirplanePP.addBaggage(baggage1,baggage2,baggage3,baggage4);
+// Q7 As a airplane controller, I want to know detail about everything in airplane
+AirplanePP.addSeats(seat1,seat2,seat3,seat4);
+AirplanePP.addBaggages(baggage1,baggage2,baggage3,baggage4);
+AirplanePP.addPassengers(passenger1,passenger2,passenger3,passenger4);
+AirplanePP.addAttendants(attendant1,attendant2,attendant3,attendant4);
+AirplanePP.addPilots(pilot1,pilot2);
+AirplanePP.addCoPilots(Copilot1,Copilot2);
 
 // console.log(AirplanePP);
  

@@ -5,4 +5,10 @@ export class Baggage{
         this.bagID = bagID;
         this.weight = weight;
     }
+    public getBagID():number{
+        return this.bagID;
+    }
+    public getWeight():number{
+        return this.weight;
+    }
 }

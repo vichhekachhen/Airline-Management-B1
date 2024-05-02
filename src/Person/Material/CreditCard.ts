@@ -8,5 +8,14 @@ export class CreditCard {
         this.expirationDate = expirationDate;
         this.cvv = cvv;
     }
+    public getCardNumber(): string {
+        return this.cardNumber;
+    }
+    public getExpirationDate(): string {
+        return this.expirationDate;
+    }
+    public getCvv(): string {
+        return this.cvv;
+    }
 
 }
