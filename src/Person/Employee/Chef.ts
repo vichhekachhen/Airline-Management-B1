@@ -1,6 +1,7 @@
 import { Gender } from "../Gender";
 import { Employee } from "./Employee";
 import { Flight } from "../../Flight/Flight";
+import { Meal } from "../../Booking/Meal/Meal";
 
 export class Chef extends Employee {
     private fights: Flight[] = [];
@@ -9,8 +10,18 @@ export class Chef extends Employee {
    
     }
 
-    addFlight(fight: Flight) {
+    public addFlight(fight: Flight) {
         this.fights.push(fight);
+    }
+
+    public getMeals() {
+        let allMeals:Meal[] = [];
+        this.fights.forEach((meals) => {
+            meals.getMeals().forEach((meal) => {
+                allMeals.push(meal);
+            });
+        })
+        return allMeals;
     }
 
 }

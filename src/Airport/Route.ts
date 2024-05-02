@@ -14,10 +14,10 @@ export class Route {
     public getAirport():Airport{
         return this.airport;
     }
-    getDeparture(): string {
+    public getDeparture(): string {
         return this.departure;
     }
-    getArrival(): string {
+    public getArrival(): string {
         return this.arrival;
     }
 

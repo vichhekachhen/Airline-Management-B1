@@ -18,19 +18,38 @@ export class Flight {
         this.flightNumber = flightNumber;
     }
 
-    getMeals(): Meal[] {
+    public addPilot(pilot:Pilot):void{
+        this.pilot = pilot;
+    }
+    public addRoute(route:Route):void{
+        this.route = route;
+      }
+      public getRoute():Route{
+        return this.route;
+      }
+    public getMeals(): Meal[] {
         return this.meals;
     }
-    getGates(): Gate[] {
+    public getGates(): Gate[] {
         return this.gates;
     }
-
-    addGate(gate: Gate) {
+    public addGate(gate: Gate) {
         this.gates.push(gate);
     }
 
-    addDate(date: DateTime) {
+    public addDate(date: DateTime) {
         this.dateTime = date
+    }
+
+    public addMealFromBookingFlight() {
+        this.bookingFlight.forEach((findMeal) => {
+            findMeal.getMealsFromBookingFlight().forEach((meal) => {
+                this.meals.push(meal);
+            })
+        })
+    }
+    public addBookingFlight(bookingFlight:BookingFlight) {
+        this.bookingFlight.push(bookingFlight)
     }
    
 }

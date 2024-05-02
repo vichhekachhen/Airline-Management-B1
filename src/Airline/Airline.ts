@@ -7,9 +7,9 @@ export class Airline {
     private bookings: Booking[] = [];
     constructor(private name: string) {
         this.name = name;
-     }
+    }
 
-    getAllSalary(): number {
+    public getAllSalary(): number {
         let allSalary = 0;
         this.emplyees.forEach(salary => {
             allSalary += salary.getSalary()
@@ -17,30 +17,39 @@ export class Airline {
         return allSalary;
     }
 
-    addEmployee(employee: Employee) {
+    public addEmployee(employee: Employee) {
         this.emplyees.push(employee);
     }
 
-    getAllMoneyNeedToPay(): number {
+    public getAllMoneyNeedToPay(): number {
         let money: number = 0;
         this.emplyees.forEach((salary) => {
             money += salary.getSalary();
         })
         return money;
     }
-    
-    addBooking(booking: Booking) {
+
+    public addBooking(booking: Booking) {
         this.bookings.push(booking)
     }
-    getAllBookings(): number {
+    public getAllBookings(): number {
         let allBookings = 0;
         this.bookings.forEach(booking => {
             allBookings += booking.getBookingTrip();
         });
         return allBookings;
     }
+    
+    public getInfoOfPassengerByBookingReferenceNumber(bookingReferenceNumber: string): Booking | undefined {
+        for (const booking of this.bookings) {
+          if (booking.getBookingReferenceNumber() === bookingReferenceNumber) {
+            return booking;
+          }
+        }
+        return undefined;
+      }
 
-    getPassengerBookingTicketReturn(): number {
+    public getPassengerBookingTicketReturn(): number {
         let passengersReturnTicket: number = 0;
         this.bookings.forEach((bookingTrip) => {
             bookingTrip.getAllBookingTrips().forEach((returnTicket) => {
@@ -50,19 +59,19 @@ export class Airline {
         return passengersReturnTicket;
     }
 
-    getDetailPassenger(referenceNumberofTrip: string): Passenger | undefined {
-        let Apassenger: Passenger | undefined;
+    public getPassengerTripDetails(referenceNumberofTrip: string): Passenger | undefined {
+        let Passenger: Passenger | undefined;
         this.bookings.forEach((booking) => {
             booking.getPassengers().forEach((passenger) => {
                 if (passenger.getReferenceNumberInPasserenger() === booking.getReferenceNumberInBooking()
                     && booking.isPassengerRegferenceNumberEqual(referenceNumberofTrip)) {
-                    Apassenger = passenger;
+                    Passenger = passenger;
                 }
             })
         })
-        return Apassenger;
+        return Passenger;
     }
-    getAllMealsOfBooking() {
+    public getAllMealsOfBooking() {
         this.bookings.forEach(booking => {
             booking.getAllBookingTrips().forEach((trip) => {
                 trip.getBookingFlight().forEach((flight) => {

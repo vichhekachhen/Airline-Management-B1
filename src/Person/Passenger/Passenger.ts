@@ -9,21 +9,52 @@ import { Gate } from "../../Airport/Gate";
 export class Passenger extends Person {
     private Baggages: Baggage[] = [];
     private booking: Booking;
-    private chooseMeal?: Meal;
+    private chooseMeal: string | undefined;
     private frequentFlyerNumber?: string;
 
     private bookingFlights: BookingFlight[] = [];
-    constructor(firstName: string, lastName: string, gender: Gender, age: number, Nationality: string, chooseMeal ?: Meal,frequentFlyerNumber?: string ) {
+    constructor(firstName: string, lastName: string, gender: Gender, age: number, Nationality: string, chooseMeal?: Meal, frequentFlyerNumber?: string) {
         super(firstName, lastName, gender, age, Nationality);
         this.chooseMeal = chooseMeal;
         this.frequentFlyerNumber = frequentFlyerNumber;
     }
-    
-    addBookingFlight(bookingFlight: BookingFlight) {
+
+    public addBookingFlight(bookingFlight: BookingFlight) {
         this.bookingFlights.push(bookingFlight);
     }
 
-    getGateForPassenger(): Gate | undefined {
+    public setBooking(book: Booking) {
+        this.booking = book;
+    }
+
+    public getReferenceNumberInPasserenger(): string {
+        return this.booking.getReferenceNumberInBooking()
+    }
+    public addBaggages(baggage: Baggage) {
+        this.Baggages.push(baggage)
+    }
+
+    public getBooking(): Booking {
+        return this.booking;
+    }
+
+    public setChooseMeal(meal: string) {
+        this.chooseMeal = meal;
+    }
+
+    public getChooseMeal(): string | undefined {
+        return this.chooseMeal;
+    }
+
+    public setFrequentFlyerNumber(frequentFlyerNumber: string) {
+        this.frequentFlyerNumber = frequentFlyerNumber;
+    }
+
+    public getFrequentFlyerNumber(): string | undefined {
+        return this.frequentFlyerNumber;
+    }
+
+    public getGateForPassenger(): Gate | undefined {
         let showgate: Gate | undefined = undefined
         this.bookingFlights.forEach(flight => {
             flight.getAFlight().getGates().forEach(gate => {
@@ -33,16 +64,5 @@ export class Passenger extends Person {
             })
         })
         return showgate;
-    }
-    
-    setBooking(book:Booking){
-        this.booking = book;
-    }
-
-    getReferenceNumberInPasserenger(): string {
-        return this.booking.getReferenceNumberInBooking()
-    }
-    addBaggages(baggage:Baggage){
-        this.Baggages.push(baggage)
     }
 }
