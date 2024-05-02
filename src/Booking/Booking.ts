@@ -10,7 +10,7 @@ export class Booking {
     }
 
     public isPassengerRegferenceNumberEqual(newbookingReferenceNumber: string): boolean {
-        return this.bookingReferenceNumber === newbookingReferenceNumber
+        return this.bookingReferenceNumber === newbookingReferenceNumber;
     }
     
     public getBookingReferenceNumber():string{

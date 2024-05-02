@@ -13,10 +13,8 @@ export class Passenger extends Person {
     private frequentFlyerNumber?: string;
 
     private bookingFlights: BookingFlight[] = [];
-    constructor(firstName: string, lastName: string, gender: Gender, age: number, Nationality: string, chooseMeal?: Meal, frequentFlyerNumber?: string) {
+    constructor(firstName: string, lastName: string, gender: Gender, age: number, Nationality: string) {
         super(firstName, lastName, gender, age, Nationality);
-        this.chooseMeal = chooseMeal;
-        this.frequentFlyerNumber = frequentFlyerNumber;
     }
 
     public addBookingFlight(bookingFlight: BookingFlight) {
@@ -28,10 +26,10 @@ export class Passenger extends Person {
     }
 
     public getReferenceNumberInPasserenger(): string {
-        return this.booking.getReferenceNumberInBooking()
+        return this.booking.getReferenceNumberInBooking();
     }
     public addBaggages(baggage: Baggage) {
-        this.Baggages.push(baggage)
+        this.Baggages.push(baggage);
     }
 
     public getBooking(): Booking {
@@ -59,7 +57,7 @@ export class Passenger extends Person {
         this.bookingFlights.forEach(flight => {
             flight.getFlight().getGates().forEach(gate => {
                 if (flight.getGate() === gate) {
-                    showgate = gate
+                    showgate = gate;
                 }
             })
         })

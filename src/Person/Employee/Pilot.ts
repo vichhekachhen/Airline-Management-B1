@@ -12,7 +12,7 @@ export class Pilot extends Employee {
     }
 
     public addFlight(flight: Flight) {
-        this.Flights.push(flight)
+        this.Flights.push(flight);
     }
 
     public addDateFlight(date: DateTime) {

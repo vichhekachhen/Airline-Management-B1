@@ -34,7 +34,7 @@ export class BookingFlight {
     }
 
     public setAGateInBookingFlight(gate: Gate) {
-        this.gate = gate
+        this.gate = gate;
     }
 
     public getGate() {

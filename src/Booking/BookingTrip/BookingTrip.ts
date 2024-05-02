@@ -13,7 +13,7 @@ export class BookingTrip {
     private returnTicket: ReturnTicket[] = [];
 
     public getBookingFlight(){
-        return this.bookingFlight
+        return this.bookingFlight;
     }
 
     public setReturnTicket(returnTicket: ReturnTicket) {

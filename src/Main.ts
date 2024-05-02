@@ -46,9 +46,9 @@ let emyployee2 = new Employee( "Reak", "Vy",  Gender.MALE, 24,"Khmer", 5000);
 let chef1 = new Chef('Davit', 'Veoun',  Gender.MALE,27,'Khmer',6000 )
 let chef2 = new Chef('Sanok', 'Dim',  Gender.FEMALE,30,'Khmer',6000 )
 // create passenger
-let passenger1 = new Passenger('Vichheka', 'Chhen', Gender.FEMALE, 20, Meal.HALAL);
-let passenger2 = new Passenger('Lisa', 'Ly',  Gender.FEMALE,21,'Khmer', Meal.KOSHER )
-let passenger3 = new Passenger('Davit', 'Cheoun',  Gender.MALE,21,'Khmer', Meal.VEGENTARIAN ) 
+let passenger1 = new Passenger('Vichheka', 'Chhen', Gender.FEMALE, 20,'Khmer');
+let passenger2 = new Passenger('Lisa', 'Ly',  Gender.FEMALE,21,'Khmer' )
+let passenger3 = new Passenger('Davit', 'Cheoun',  Gender.MALE,21,'Khmer') 
 // create bookingTicket
 let bookingTicket1 = new Booking("BB1","B12");
 let bookingTicket2 = new Booking("BB2","B13");
@@ -86,7 +86,7 @@ Airline1.addBooking(bookingTicket1)
 passenger1.setBooking(bookingTicket1);
 let passengerBooking = Airline1.getInfoOfPassengerByBookingReferenceNumber("BB1");
 
-// console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
+console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
 
 
 // Q2. As an airline manager, I want to know for a given flight, how many passengers were booking return tickets.

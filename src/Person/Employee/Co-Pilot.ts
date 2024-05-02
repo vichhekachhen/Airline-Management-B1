@@ -12,7 +12,7 @@ export class CoPilot extends Employee {
     }
 
     public addFlight(flight: Flight) {
-        this.Flights.push(flight)
+        this.Flights.push(flight);
     }
 
 }

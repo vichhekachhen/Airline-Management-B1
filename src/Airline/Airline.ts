@@ -25,7 +25,7 @@ export class Airline {
         let money: number = 0;
         this.emplyees.forEach((salary) => {
             money += salary.getSalary();
-        })
+        });
         return money;
     }
 
@@ -45,7 +45,7 @@ export class Airline {
         for (const booking of this.bookings) {
           if (booking.getBookingReferenceNumber() === bookingReferenceNumber) {
             return booking;
-          }
+          };
         }
         return undefined;
       }

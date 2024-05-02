@@ -49,7 +49,7 @@ export class Flight {
         })
     }
     public addBookingFlight(bookingFlight:BookingFlight) {
-        this.bookingFlight.push(bookingFlight)
+        this.bookingFlight.push(bookingFlight);
     }
    
 }
