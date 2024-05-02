@@ -68,10 +68,10 @@ let date1 = new DateTime('23/04/2024','11:00 AM');
 let date2 = new DateTime('23/04/2024','11:00 PM');
 let date3 = new DateTime('23/04/2024','10:30 AM');
 // create Baggage
-let baggage1 = new Baggage(34);
-let baggage2 = new Baggage(35);
-let baggage3 = new Baggage(50);
-let baggage4 = new Baggage(40);
+let baggage1 = new Baggage(1,34);
+let baggage2 = new Baggage(2,35);
+let baggage3 = new Baggage(3,50);
+let baggage4 = new Baggage(4,40);
 // create seat 
 let seat1 = new Seat("B007");
 let seat2 = new Seat("B008");
@@ -86,7 +86,7 @@ Airline1.addBooking(bookingTicket1)
 passenger1.setBooking(bookingTicket1);
 let passengerBooking = Airline1.getInfoOfPassengerByBookingReferenceNumber("BB1");
 
-// console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
+console.log("Q1/ Know details of a passenger’s trip in",Airline1,passengerBooking);
 
 
 // Q2. As an airline manager, I want to know for a given flight, how many passengers were booking return tickets.
@@ -109,9 +109,9 @@ pilot1.addFlight(flight3);
 
 // 4. As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare.
 bookingFlight2.getMealsFromBookingFlight()
-bookingFlight2.setAMealFromBookingFlight(Meal.VEGENTARIAN);
-bookingFlight2.setAMealFromBookingFlight(Meal.HALAL);
-bookingFlight2.setAMealFromBookingFlight(Meal.KOSHER);
+bookingFlight2.setMealFromBookingFlight(Meal.VEGENTARIAN);
+bookingFlight2.setMealFromBookingFlight(Meal.HALAL);
+bookingFlight2.setMealFromBookingFlight(Meal.KOSHER);
 
 flight.addBookingFlight(bookingFlight2);
 flight.addMealFromBookingFlight();
@@ -137,17 +137,21 @@ passenger1.getGateForPassenger();
 
 //============================//Extra User Story//============================
 
-// Q7 As a airplane controller, I want to know the seat and weight of baggage in airplane
+// Q7 As a airplane controller, I want to know the seat and weight of each bags in airplane
 AirplanePP.addSeat(seat1,seat2,seat3,seat4);
 AirplanePP.addBaggage(baggage1,baggage2,baggage3,baggage4);
 
 // console.log(AirplanePP);
  
 // Q8 As a Pilot controller, I want to know the details of a flight
-bookingFlight1.getMealsFromBookingFlight()
+
+bookingFlight1.setMealFromBookingFlight(Meal.HALAL);
+flight1.addMealFromBookingFlight();
 flight1.addBookingFlight(bookingFlight1);
 flight1.addGate(gate1);
 flight1.addPilot(pilot1);
 flight1.addRoute(route1);
 
 // console.log(flight1);
+
+
